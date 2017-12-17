@@ -1,0 +1,15 @@
+include配置URL注意事项
+1、根urls.py针对APP配置的URL名称，是该APP所有URL的总路径
+2、配置URL时注意正则表达式结尾符号$和/
+
+templates
+    HTML文件
+    使用了Django模板语言（Django Templates Language，DTL）
+    可以使用第三方模板（jinjia2）
+
+开发第一个template
+    1、在blog目录下创建 templates的目录
+    2、在该文件下创建html文件
+    3、在views.py中返回render()
+
+DTL初步使用
