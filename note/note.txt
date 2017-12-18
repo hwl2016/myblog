@@ -43,3 +43,32 @@ Admin: Dajngo自带的后台管理系统  可以直接操作数据库  提供了
 
     修改数据默认显示名称
         在Article类下添加一个方法  __str__  返回一个title
+
+django提交表单都需要添加 {% csrf_token %}
+
+
+Templates过滤器
+    可以修改模板中的变量，从而显示不同的内容
+    {{ value | filter }}
+    如： {{ list_nums | length }}   {{ article.id | default:'0'}}
+    过滤器可以叠加： {{ value | filter1 | filter2 | filter3 }}
+
+Django shell
+    它是一个Python的交互式命令行程序
+    它自动引入我们的项目环境
+    我们可以使用它与我们的项目进行交互
+
+    python manage.py shell
+    from blog.models import Article
+    Article.objects.all()
+
+    作用：
+        可以进行调试
+        测试一些未知的方法
+
+Admin
+    显示其他字段   list_display = ('title', 'content', 'pub_time')
+    过滤器     list_filter = ('pub_time',)
+
+
+
