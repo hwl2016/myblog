@@ -13,3 +13,33 @@ templates
     3、在views.py中返回render()
 
 DTL初步使用
+
+ORM：对象关系映射
+    实现了对象与数据库的映射
+    隐藏了数据访问细节，不需要编写SQL语句
+
+django中如何将model映射成数据表？
+    命令行进入manage.py同级目录
+    执行  python manage.py makemigrations app名(可选)
+    再执行  python manage.py migrate
+
+生成数据表
+    model映射成数据表后执行
+        python manage.py sqlmigrate 应用名 文件id
+        如: python manage.py sqlmigrate blog 0001
+
+生成的数据表在db.sqlite3中  可以用SQLite Expert Personal第三方软件查看
+
+启动django服务： python manage.py runserver
+
+Admin: Dajngo自带的后台管理系统  可以直接操作数据库  提供了很多的定制功能
+    python manager.py createsuperuser   创建超级用户
+    http://127.0.0.1:8000/admin   进入后台管理界面
+    界面切换成中文： setting.py 设置 LANGUAGE_CODE="zh_Hans"
+
+    配置Admin
+        在应用下admin.py中引用自身的models模块
+        编辑admin.py  admin.site.register(models.Article)
+
+    修改数据默认显示名称
+        在Article类下添加一个方法  __str__  返回一个title
